@@ -9,9 +9,6 @@ describe('shuffleArray should', () => {
     })
 })
 
-describe('shuffleArry is a number', () => {
-    test("return an array", () =>  {
-        expect(typeof shuffleArray(array)).toBe('integer')
-    })
-})
+
+
 

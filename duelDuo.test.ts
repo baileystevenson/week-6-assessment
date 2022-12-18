@@ -14,20 +14,22 @@ afterAll(async () => {
     driver.quit()
 })
 
-test('Title shows up when page loads', async () => {
-    const title = await driver.findElement(By.id('title'))
-    const displayed = await title.isDisplayed()
-    expect(displayed).toBe(true)
+// test('Title shows up when page loads', async () => {
+//     const title = await driver.findElement(By.id('title'))
+//     const displayed = await title.isDisplayed()
+//     expect(displayed).toBe(true)
+//     await driver.sleep(5000)
+// })
+
+test('add to due button displays player-duo', async ()=> {
+    await driver.findElement(By.id('duel')).click()
+
     await driver.sleep(5000)
 })
 
-const addToDuo = async (driver, title)=> {
-    await driver.findElement(By.xpath(`//section/div`)).sendKeys(title)
-    await driver.findElement(By.xpath('//button')).click()
-    const addToDuo = await driver.findElement(By.xpath('//li/span')).getText()
+test('clicking draw btn displays choices', async ()=> {
+    await driver.findElement(By.id('draw')).click()
     await driver.sleep(5000)
+})
 
-module.exports = {
-    addToDuo
-}
-}
+
